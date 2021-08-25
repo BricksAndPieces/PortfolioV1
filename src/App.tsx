@@ -6,11 +6,12 @@ import About from "./components/about";
 import { Component } from "react";
 import styles from './App.module.css';
 import Skills from "./components/skills";
+import React from "react";
 
 class App extends Component {
   render() {
     return (
-      <body>
+      <>
         <Header/>
         <Intro/>
 
@@ -29,7 +30,7 @@ class App extends Component {
           Resume
         </section>
         <Footer/>
-      </body>
+      </>
     );
   }
 }

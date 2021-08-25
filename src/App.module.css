@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -16,7 +17,7 @@ p {
 
 .spacer {
   aspect-ratio: 900/100;
-  width: 100%;
+  width: 101%;
   background-repeat: no-repeat;
   position: center;
   background-size: cover;

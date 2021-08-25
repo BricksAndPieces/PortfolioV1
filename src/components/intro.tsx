@@ -1,6 +1,7 @@
 import { Component } from "react";
 import styles from "./intro.module.css"
 import Boids from "./boids";
+import React from "react";
 
 const taglines = [
 	"I am a Full-Stack Developer",
@@ -8,9 +9,12 @@ const taglines = [
 	"I am a Honors Undergraduate Student"
 ];
 
-class Intro extends Component {
+class Intro extends Component<{}, {
+	taglineIndex: number;
+}> {
+	private timeout?: NodeJS.Timer;
 
-	constructor(props) {
+	constructor(props: any) {
 		super(props);
 		this.state = {
 			taglineIndex: 0
@@ -25,7 +29,7 @@ class Intro extends Component {
 	}
 
 	componentWillUnmount() {
-		clearInterval(this.timeout);
+		clearInterval(this.timeout!);
 	}
 
 	render() {
