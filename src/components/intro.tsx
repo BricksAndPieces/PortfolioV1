@@ -36,19 +36,21 @@ class Intro extends Component<{}, {
 		let tagline = taglines[this.state.taglineIndex % taglines.length];
 
 		return (
-			<section className={styles.section}>
+			<>
 				<Boids/>
-				<div className={styles.contentArea}>
-					{/*<h4 className={styles.intro}>👋 Hi there, my name is</h4>*/}
-					<h1 className={styles.name}>Ishan Shetty</h1>
-					<h3 className={styles.tagline}>{ tagline }</h3>
-					<div style={{marginTop: "5px"}}>
-						<img width={"40px"} height={"40px"} src={"https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"}/>
-						<img width={"40px"} height={"40px"} src={"https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png"}/>
-						<img width={"40px"} height={"40px"} src={"https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png"}/>
+				<section className={styles.section}>
+					<div className={styles.contentArea}>
+						{/*<h4 className={styles.intro}>👋 Hi there, my name is</h4>*/}
+						<h1 className={styles.name}>Ishan Shetty</h1>
+						<h3 className={styles.tagline}>{ tagline }</h3>
+						<div style={{marginTop: "5px"}}>
+							<img width={"40px"} height={"40px"} src={"https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"}/>
+							<img width={"40px"} height={"40px"} src={"https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png"}/>
+							<img width={"40px"} height={"40px"} src={"https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png"}/>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</>
 		);
 	}
 }

@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import styles from "./boids.module.css"
-import p5 from "p5"
+import styles from "./boids.module.css";
+import p5 from "p5";
 
 class Boids extends Component {
-	constructor(props) {
+	private readonly myRef: React.RefObject<any>;
+	private myP5?: p5;
+
+	constructor(props: any) {
 		super(props);
 		this.myRef = React.createRef();
 	}
 
-	Sketch = (p) => {
+	Sketch = (p: p5) => {
 
 		const desiredSep = 25;
 		const desiredAlg = 50;
@@ -24,49 +27,52 @@ class Boids extends Component {
 		const viewRange = 50;
 		const viewAngle = p.PI*0.85;
 
-		function sub(a, b) {
+		function sub(a: Vector, b: Vector) {
 			return new Vector(a.x-b.x, a.y-b.y);
 		}
 
 		class Vector {
-			constructor(x, y) {
+			x: number;
+			y: number;
+
+			constructor(x: number, y: number) {
 				this.x = x;
 				this.y = y;
 			}
 
-			addVector(o) {
+			addVector(o: Vector): void {
 				this.x += o.x;
 				this.y += o.y;
 			}
 
-			sub(o) {
+			sub(o: Vector): void {
 				this.x -= o.x;
 				this.y -= o.y;
 			}
 
-			mult(a) {
+			mult(a: number): void {
 				this.x *= a;
 				this.y *= a;
 			}
 
-			div(a) {
+			div(a: number): void {
 				this.x /= a;
 				this.y /= a;
 			}
 
-			dist(o) {
+			dist(o: Vector): number {
 				return p.dist(this.x, this.y, o.x, o.y);
 			}
 
-			mag() {
+			mag(): number {
 				return p.sqrt(this.x*this.x+this.y*this.y);
 			}
 
-			dot(o) {
+			dot(o: Vector): number {
 				return this.x * o.x + this.y * o.y;
 			}
 
-			normalize() {
+			normalize(): void {
 				const mag = this.mag();
 				if(mag !== 0) {
 					this.x /= mag;
@@ -74,7 +80,7 @@ class Boids extends Component {
 				}
 			}
 
-			limit(a) {
+			limit(a: number): void {
 				const mag = this.mag();
 				if(mag !== 0 && mag > a) {
 					this.x *= a / mag;
@@ -82,19 +88,23 @@ class Boids extends Component {
 				}
 			}
 
-			angleBetween(o) {
+			angleBetween(o: Vector): number {
 				return p.acos(this.dot(o) / (this.mag() * o.mag()));
 			}
 		}
 
 		class Boid {
-			constructor(x, y) {
+			private readonly pos: Vector;
+			private readonly vel: Vector;
+			private visible: boolean;
+
+			constructor(x: number, y: number) {
 				this.pos = new Vector(x, y)
 				this.vel = new Vector(p.random(-maxVelocity, maxVelocity), p.random(-maxVelocity, maxVelocity));
 				this.visible = false;
 			}
 
-			movePos(others) {
+			movePos(others: Boid[]): void {
 				this.calculateView(others)
 
 				this.vel.addVector(this.separation(others));
@@ -119,7 +129,7 @@ class Boids extends Component {
 				}
 			}
 
-			calculateView(others) {
+			calculateView(others: Boid[]): void {
 				if(!others) return;
 
 				for(let b of others) {
@@ -137,7 +147,7 @@ class Boids extends Component {
 				}
 			}
 
-			separation(others) {
+			separation(others: Boid[]): Vector {
 				if(others.length === 0) {
 					return new Vector(0, 0);
 				}
@@ -156,7 +166,7 @@ class Boids extends Component {
 						diff.normalize();
 						diff.div(d);
 						// console.log(this.pos, b.pos, diff);
-						steer.addVector(new Vector(diff, diff));
+						steer.addVector(diff);
 						count++;
 					}
 				}
@@ -176,7 +186,7 @@ class Boids extends Component {
 				return steer;
 			}
 
-			alignment(others) {
+			alignment(others: Boid[]): Vector {
 				let steer = new Vector(0, 0);
 				if(others) {
 					let count = 0;
@@ -205,21 +215,21 @@ class Boids extends Component {
 				return steer;
 			}
 
-			cohesion(others) {
-				if(others) {
+			cohesion(others: Boid[]): Vector {
+				if(!others) {
 					return new Vector(0, 0);
 				}
 
 				let target = new Vector(0, 0);
 				let count = 0;
 				for(let b of others) {
-					if(b === this) {
+					if(!b.visible) {
 						continue;
 					}
 
 					let d = this.pos.dist(b.pos);
 					if(d > 0 && d < desiredCoh) {
-						target.addVector(d.pos);
+						target.addVector(b.pos);
 						count++;
 					}
 				}
@@ -240,14 +250,14 @@ class Boids extends Component {
 				return steer;
 			}
 
-			noise() {
+			noise(): Vector {
 				let a = new Vector(p.random(-maxForce, maxForce), p.random(-maxForce, maxForce))
 				// a.mult(2);
 
 				return a;
 			}
 
-			draw() {
+			draw(): void {
 				// this.x += this.vx;
 				// this.y += this.vy;
 
@@ -262,7 +272,7 @@ class Boids extends Component {
 			}
 		}
 
-		let boids = []
+		let boids: Boid[] = []
 
 		p.setup = () => {
 			p.createCanvas(window.outerWidth, window.innerHeight);
@@ -290,7 +300,7 @@ class Boids extends Component {
 	}
 
 	render() {
-		return <div ref={this.myRef}/>
+		return <div className={styles.canvasBackground} ref={this.myRef}/>
 	}
 }
 
