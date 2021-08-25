@@ -1,0 +1,59 @@
+h2 {
+  color: white;
+  font-size: 50px;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  opacity: 90%;
+}
+
+.section {
+  background-color: #207876;
+  height: 80vh;
+}
+
+.contentArea {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+}
+
+.textArea {
+  width: 50%;
+  margin-right: 25px;
+}
+
+.iconHolder {
+  margin-top: 10%;
+  margin-left: 25px;
+  border-radius: 25px;
+  height: 50vh;
+  width: 45%;
+  background: #1a6665;
+}
+
+.grid {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon {
+  margin: 0.5vw;
+  /*background: black;*/
+  width: 6vw;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon > img {
+  width: 100%;
+  margin: auto;
+}

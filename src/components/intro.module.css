@@ -1,0 +1,37 @@
+img {
+  margin-right: 10px;
+}
+
+canvas {
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.section {
+  height: 80vh;
+}
+
+.contentArea {
+  /*text-align: center;*/
+  padding-top: 15%;
+  padding-left: 10%;
+  opacity: 99%;
+}
+
+.intro {
+  margin: 0;
+  font-size: 20px;
+  opacity: 50%;
+}
+
+.name {
+  margin: 0;
+  font-size: 100px;
+}
+
+.tagline {
+  margin: 10px 0 0;
+  font-size: 35px;
+  opacity: 80%;
+}
