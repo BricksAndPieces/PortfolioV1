@@ -1,0 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #183D47;
+}
+
+h1, h2, h3, h4 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
+
+.spacer {
+  aspect-ratio: 900/100;
+  width: 100%;
+  background-repeat: no-repeat;
+  position: center;
+  background-size: cover;
+}
+
+.divider1 {
+  background-image: url("assets/images/layered-waves-haikei.svg");
+}
+
+.flip {
+  transform: rotate(180deg);
+}

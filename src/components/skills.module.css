@@ -1,0 +1,16 @@
+.section {
+  height: 100vh;
+}
+
+.contentArea {
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-right: 10%;
+}
+
+.iconHolder {
+  width: 100%;
+  height: 50vh;
+  border-radius: 25px;
+  background: #14363e;
+}
