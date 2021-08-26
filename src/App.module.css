@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -9,6 +11,7 @@ body {
 
 h1, h2, h3, h4 {
   color: whitesmoke;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 p {
@@ -16,7 +19,10 @@ p {
 }
 
 .spacer {
-  aspect-ratio: 900/100;
+  /*background-color: #06161f;*/
+  aspect-ratio: 2937/532;
+
+  /*aspect-ratio: 900/100;*/
   width: 101%;
   background-repeat: no-repeat;
   position: center;
@@ -25,6 +31,10 @@ p {
 
 .divider1 {
   background-image: url("assets/images/layered-waves-haikei.svg");
+}
+
+.city {
+  background-image: url("assets/images/city.png");
 }
 
 .flip {

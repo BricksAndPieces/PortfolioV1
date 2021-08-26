@@ -19,9 +19,10 @@ class Boids extends Component {
 
 		const sepWeight = 2.5;
 		const algWeight = 1.5;
-		const cohWeight = 1.3;
+		const cohWeight = 0.5;
+		const noiseWeight = 0.5;
 
-		const maxVelocity = 2;
+		const maxVelocity = 10;
 		const maxForce = 0.5;
 
 		const viewRange = 50;
@@ -91,6 +92,10 @@ class Boids extends Component {
 			angleBetween(o: Vector): number {
 				return p.acos(this.dot(o) / (this.mag() * o.mag()));
 			}
+
+			heading(): number {
+				return p.atan2(this.y, this.x);
+			}
 		}
 
 		class Boid {
@@ -108,9 +113,9 @@ class Boids extends Component {
 				this.calculateView(others)
 
 				this.vel.addVector(this.separation(others));
-				// this.vel.addVector(this.alignment(others));
-				// this.vel.addVector(this.cohesion(others));
-				// this.vel.addVector(this.noise());
+				this.vel.addVector(this.alignment(others));
+				this.vel.addVector(this.cohesion(others));
+				this.vel.addVector(this.noise());
 
 				this.vel.limit(maxVelocity);
 				this.pos.addVector(this.vel);
@@ -191,7 +196,7 @@ class Boids extends Component {
 				if(others) {
 					let count = 0;
 					for(let b of others) {
-						if(b === this) {
+						if(!b.visible) {
 							continue;
 						}
 
@@ -251,17 +256,32 @@ class Boids extends Component {
 			}
 
 			noise(): Vector {
-				let a = new Vector(p.random(-maxForce, maxForce), p.random(-maxForce, maxForce))
-				// a.mult(2);
+				let a = new Vector(p.random(-1, 1), p.random(-1, 1))
+				a.mult(noiseWeight);
 
 				return a;
 			}
 
-			draw(): void {
+			drawBoid(): void {
 				// this.x += this.vx;
 				// this.y += this.vy;
 
-				p.circle(this.pos.x, this.pos.y, 10);
+				// p.circle(this.pos.x, this.pos.y, 10);
+
+				let r = 3;
+
+				let theta = this.vel.heading() + p.radians(90);
+				// p.fill(127);
+				// p.stroke(200);
+				p.push();
+				p.translate(this.pos.x, this.pos.y);
+				p.rotate(theta);
+				p.beginShape();
+				p.vertex(0, -r * 2);
+				p.vertex(-r, r * 2);
+				p.vertex(r, r * 2);
+				p.endShape(p.CLOSE);
+				p.pop();
 
 				// if(this.x > window.innerWidth || this.x < 0) {
 				// 	this.vx *= -1;
@@ -291,7 +311,7 @@ class Boids extends Component {
 
 			p.fill('#185a61');
 			boids.forEach(b => b.movePos(boids))
-			boids.forEach(b => b.draw());
+			boids.forEach(b => b.drawBoid());
 		}
 	}
 

@@ -7,15 +7,18 @@ import { Component } from "react";
 import styles from './App.module.css';
 import Skills from "./components/skills";
 import React from "react";
+import AnimatedBackground from "./components/background/animated-background";
 
 class App extends Component {
   render() {
     return (
       <>
-        <Header/>
+        {/*<Header/>*/}
+        <AnimatedBackground/>
         <Intro/>
 
-        <div className={`${styles.spacer} ${styles.divider1}`} />
+        {/*<div className={`${styles.spacer} ${styles.divider1}`} />*/}
+        <div className={`${styles.spacer} ${styles.city}`} />
 
         <About id={"about"}/>
 

@@ -1,12 +1,13 @@
 import { Component } from "react";
 import styles from "./intro.module.css"
-import Boids from "./boids";
+import Boids from "./boids/boids";
 import React from "react";
+import AnimatedBackground from "./background/animated-background";
 
 const taglines = [
-	"I am a Full-Stack Developer",
-	"I am an AI enthusiast",
-	"I am a Honors Undergraduate Student"
+	"Full-Stack Developer",
+	"AI enthusiast",
+	"Honors Undergraduate Student"
 ];
 
 class Intro extends Component<{}, {
@@ -37,17 +38,35 @@ class Intro extends Component<{}, {
 
 		return (
 			<>
-				<Boids/>
+				{/*<Boids/>*/}
+				{/*<AnimatedBackground/>*/}
 				<section className={styles.section}>
 					<div className={styles.contentArea}>
 						{/*<h4 className={styles.intro}>👋 Hi there, my name is</h4>*/}
 						<h1 className={styles.name}>Ishan Shetty</h1>
 						<h3 className={styles.tagline}>{ tagline }</h3>
 						<div style={{marginTop: "5px"}}>
-							<img width={"40px"} height={"40px"} src={"https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"}/>
-							<img width={"40px"} height={"40px"} src={"https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png"}/>
-							<img width={"40px"} height={"40px"} src={"https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png"}/>
+
+							<a href={'https://www.linkedin.com/in/ishan-shetty/'} target={'_blank'}>
+								<button>
+									<b>Connect on Linkedin</b>
+								</button>
+							</a>
+
+							<button onClick={() => alert('resume moment')}>
+								<b>View Resume</b>
+							</button>
+
+
+							{/*<img width={"40px"} height={"40px"} src={"https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"}/>*/}
+							{/*<img width={"40px"} height={"40px"} src={"https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png"}/>*/}
+							{/*<img width={"40px"} height={"40px"} src={"https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png"}/>*/}
 						</div>
+
+						<a href={'#about'}>
+							<button className={styles.downButton}>v</button>
+						</a>
+
 					</div>
 				</section>
 			</>

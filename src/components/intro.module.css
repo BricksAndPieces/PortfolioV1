@@ -2,20 +2,36 @@ img {
   margin-right: 10px;
 }
 
-/*canvas {*/
-/*  position:absolute;*/
-/*  left:0;*/
-/*  top:0;*/
-/*}*/
+button {
+  border-radius: 25px;
+  min-width: 200px;
+  min-height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  background-color: #081b26;
+
+  color: whitesmoke;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #2a5b7d;
+}
+
+.downButton {
+  margin-top: 80px;
+  min-width: 50px;
+}
 
 .section {
-  height: 80vh;
+  height: 70vh;
 }
 
 .contentArea {
-  /*text-align: center;*/
+  text-align: center;
   padding-top: 15%;
-  padding-left: 10%;
+  /*padding-left: 10%;*/
   opacity: 99%;
 }
 
@@ -31,7 +47,7 @@ img {
 }
 
 .tagline {
-  margin: 10px 0 0;
+  margin-top: -10px;
   font-size: 35px;
   opacity: 80%;
 }
