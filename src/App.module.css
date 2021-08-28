@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background: #183D47;
+  background: #081b26;
 }
 
 h1, h2, h3, h4 {
@@ -30,6 +30,10 @@ p {
 }
 
 .divider1 {
+  background-image: url("assets/images/layered-waves-haikei-blue.svg");
+}
+
+.divider2 {
   background-image: url("assets/images/layered-waves-haikei.svg");
 }
 

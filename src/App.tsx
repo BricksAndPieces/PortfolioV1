@@ -19,6 +19,7 @@ class App extends Component {
 
         {/*<div className={`${styles.spacer} ${styles.divider1}`} />*/}
         <div className={`${styles.spacer} ${styles.city}`} />
+        <div className={`${styles.spacer} ${styles.divider2}`} />
 
         <About id={"about"}/>
 

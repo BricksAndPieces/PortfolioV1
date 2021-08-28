@@ -54,7 +54,7 @@ class Intro extends Component<{}, {
 							</a>
 
 							<button onClick={() => alert('resume moment')}>
-								<b>View Resume</b>
+								<b>View my Resume</b>
 							</button>
 
 

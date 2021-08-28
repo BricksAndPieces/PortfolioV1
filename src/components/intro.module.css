@@ -3,20 +3,29 @@ img {
 }
 
 button {
-  border-radius: 25px;
-  min-width: 200px;
+  min-width: 220px;
   min-height: 50px;
   margin-left: 10px;
   margin-right: 10px;
 
-  background-color: #081b26;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 
   color: whitesmoke;
   font-size: 15px;
 }
 
 button:hover {
-  background-color: #2a5b7d;
+  /*box-shadow: 0 0 5px 0 #FFFFAAFF inset, 0 0 16px 2px #FFFFAAFF;*/
+  border: 2px solid #FFFFAAFF;
+  background: #081b26;
+
+  letter-spacing: 0.05rem;
+  cursor: pointer;
 }
 
 .downButton {

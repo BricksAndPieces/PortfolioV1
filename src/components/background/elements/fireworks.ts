@@ -7,6 +7,7 @@ const NUM_PARTICLES = 50;
 export class FireworkSystem {
   private fireworks: Firework[];
   private launchCounter: number;
+  private pauseCounter = 0;
 
   constructor() {
     this.fireworks = [];
@@ -26,19 +27,27 @@ export class FireworkSystem {
     //   this.launchCounter += 100;
     // }
 
-    if(this.launchCounter > 0) {
+    if(this.launchCounter > 0 && this.pauseCounter === 0) {
       this.launchCounter--;
-      if(this.launchCounter % 10 == 0) {
+      if(this.launchCounter % 10 === 0) {
         this.launch(p.random(100, p.width-100), p.height, p);
       }
     }
 
     this.fireworks.forEach(f => f.update(p));
     this.fireworks = this.fireworks.filter(f => !f.done());
+
+    if(this.pauseCounter > 0) {
+      this.pauseCounter--;
+    }
   }
 
   launch(x: number, y: number, p: p5) {
     this.fireworks.push(new Firework(x, y, p.random(0, 360), p));
+  }
+
+  pause(duration: number): void {
+    this.pauseCounter += duration;
   }
 }
 
