@@ -1,3 +1,2 @@
-Primary: #183D47
-Secondary: #207876
-Contrast:
+Primary: #081b26
+Secondary: #FFFFAAFF
