@@ -23,16 +23,16 @@ class App extends Component {
 
         <About id={"about"}/>
 
-        <div className={`${styles.spacer} ${styles.divider1} ${styles.flip}`} />
+        {/*<div className={`${styles.spacer} ${styles.divider1} ${styles.flip}`} />*/}
 
-        <Skills id={"skills"}/>
+        {/*<Skills id={"skills"}/>*/}
 
-        <section id={"projects"}>
-          Projects
-        </section>
-        <section id={"resume"}>
-          Resume
-        </section>
+        {/*<section id={"projects"}>*/}
+        {/*  Projects*/}
+        {/*</section>*/}
+        {/*<section id={"resume"}>*/}
+        {/*  Resume*/}
+        {/*</section>*/}
         <Footer/>
       </>
     );

@@ -1,12 +1,12 @@
 .spacer {
   /*background-color: #06161f;*/
-  aspect-ratio: 2937/532;
 
   /*aspect-ratio: 900/100;*/
   width: 101%;
   background-repeat: no-repeat;
   position: center;
   background-size: cover;
+  background-position: center center;
 }
 
 .divider1 {
@@ -14,10 +14,12 @@
 }
 
 .divider2 {
+  aspect-ratio: 900/70;
   background-image: url("assets/images/layered-waves-haikei.svg");
 }
 
 .city {
+  aspect-ratio: 2937/532;
   background-image: url("assets/images/city.png");
 }
 
