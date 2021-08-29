@@ -12,6 +12,7 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
 
   private rocket?: Rocket;
   private firework?: FireworkSystem;
+  private showFireworks = false;
 
   enterHover = () => { this.setState({ isHover: true }) }
   exitHover = () => { this.setState({ isHover: false }) }
@@ -45,28 +46,17 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
     p.draw = () => {
       p.background('#081b265F');
 
-      // this.moon!.update();
-      // this.moon!.draw(p);
-
-      if(this.z) {
-        this.firework!.update(p);
-        this.firework!.draw(p);
-      }
-
+      this.firework!.update(p, this.showFireworks);
       this.rocket!.draw(p);
     }
   }
 
-  z = false;
-
-  launchRocket = () => {
-    if(true) {
-      this.z = !this.z;
-    }else {
-      if(!this.rocket?.active) {
-        this.firework!.pause(300);
-        this.rocket!.launch();
-      }
+  easterEgg = () => {
+    if(!this.showFireworks) {
+      this.showFireworks = true;
+    }else if(!this.rocket?.active) {
+      this.firework!.pause(300);
+      this.rocket!.launch();
     }
   }
 
@@ -80,7 +70,7 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
         <span className={styles.moon}
               onMouseEnter={this.enterHover}
               onMouseLeave={this.exitHover}
-              onClick={this.launchRocket}>
+              onClick={this.easterEgg}>
           {this.state.isHover && <h4 className={styles.hidden}>Click me?</h4>}
         </span>
         <div className={styles.canvasBackground} ref={this.myRef}/>

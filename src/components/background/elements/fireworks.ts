@@ -14,32 +14,22 @@ export class FireworkSystem {
     this.launchCounter = 0;
   }
 
-  draw(p: p5) {
-    this.fireworks.forEach(f => f.draw(p));
-  }
-
-  update(p: p5) {
-    if(p.random() < 0.01) {
-      this.launchCounter += 100;
-    }
-
-    // if(p.random() < 0.1) {
-    //   this.launchCounter += 100;
-    // }
-
-    if(this.launchCounter > 0 && this.pauseCounter === 0) {
-      this.launchCounter--;
+  update(p: p5, allowSpawn: boolean) {
+    if(this.pauseCounter === 0 && allowSpawn) {
+      this.launchCounter++;
       if(this.launchCounter % 10 === 0) {
         this.launch(p.random(100, p.width-100), p.height, p);
+        this.launchCounter = 0;
       }
     }
-
-    this.fireworks.forEach(f => f.update(p));
-    this.fireworks = this.fireworks.filter(f => !f.done());
 
     if(this.pauseCounter > 0) {
       this.pauseCounter--;
     }
+
+    this.fireworks.forEach(f => f.update(p));
+    this.fireworks = this.fireworks.filter(f => !f.done());
+    this.fireworks.forEach(f => f.draw(p));
   }
 
   launch(x: number, y: number, p: p5) {
