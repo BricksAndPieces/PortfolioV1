@@ -5,10 +5,10 @@ class Footer extends Component {
 	render() {
 		return (
 			<>
-				<p>
-					Have you tried clicking on the <a href={"#moon"}><b>Moon</b></a>?
+				<p className={styles.footer}>
+					Have you tried clicking on the <a className={styles.footerLink} href={"#moon"}><b>Moon</b></a>?
 				</p>
-				<p>Made with ❤️ by Ishan Shetty</p>
+				<p className={styles.footer}>Made with ❤️ by Ishan Shetty</p>
 			</>
 		);
 	}

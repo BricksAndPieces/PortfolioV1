@@ -1,8 +1,8 @@
-p {
+.footer {
   text-align: center;
 }
 
-a {
+.footerLink {
   text-decoration: none;
   color: #FFFFAAFF;
 }
