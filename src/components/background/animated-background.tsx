@@ -2,26 +2,28 @@ import React, { Component } from "react";
 import styles from "./animated-background.module.css"
 import p5 from "p5";
 
-import { Moon } from "./elements/moon";
 import { FireworkSystem } from "./elements/fireworks";
 import { Rocket } from "./elements/rocket";
 
-class AnimatedBackground extends Component<{}, { isHover: boolean }> {
+class AnimatedBackground extends Component<{}, { isMoonHover: boolean, moonText: string }> {
   private readonly myRef: React.RefObject<any>;
   private myP5?: p5;
 
   private rocket?: Rocket;
   private firework?: FireworkSystem;
+  private showFireworks = false;
+  private allowRocket = false;
 
-  enterHover = () => { this.setState({ isHover: true }) }
-  exitHover = () => { this.setState({ isHover: false }) }
+  enterHover = () => { this.setState({ isMoonHover: true }) }
+  exitHover = () => { this.setState({ isMoonHover: false }) }
 
   constructor(props: any) {
     super(props);
     this.myRef = React.createRef();
 
     this.state = {
-      isHover: false
+      isMoonHover: false,
+      moonText: 'Click me?'
     }
   }
 
@@ -32,7 +34,6 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
       p.colorMode(p.HSB);
       p.noStroke();
 
-      // this.moon = new Moon(0.5, 100);
       this.firework = new FireworkSystem();
       this.rocket = new Rocket(p);
 
@@ -45,33 +46,26 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
     p.draw = () => {
       p.background('#081b265F');
 
-      // this.moon!.update();
-      // this.moon!.draw(p);
-
-      if(this.z) {
-        this.firework!.update(p);
-        this.firework!.draw(p);
-      }
-
-      this.rocket!.draw(p);
-    }
-  }
-
-  z = false;
-
-  launchRocket = () => {
-    if(true) {
-      this.z = !this.z;
-    }else {
-      if(!this.rocket?.active) {
-        this.firework!.pause(300);
-        this.rocket!.launch();
-      }
+      this.firework?.update(p, this.showFireworks);
+      this.rocket?.draw(p);
     }
   }
 
   componentDidMount(): void {
     this.myP5 = new p5(this.Sketch, this.myRef.current)
+  }
+
+  easterEgg = () => {
+    if(!this.showFireworks) {
+      this.showFireworks = true;
+      setTimeout(() => {
+        this.setState({moonText: 'Again?'})
+        this.allowRocket = true;
+      }, 5000);
+    }else if(this.allowRocket && !this.rocket?.active) {
+      this.firework?.pause(300);
+      this.rocket?.launch();
+    }
   }
 
   render(): JSX.Element {
@@ -80,8 +74,12 @@ class AnimatedBackground extends Component<{}, { isHover: boolean }> {
         <span className={styles.moon}
               onMouseEnter={this.enterHover}
               onMouseLeave={this.exitHover}
-              onClick={this.launchRocket}>
-          {this.state.isHover && <h4 className={styles.hidden}>Click me?</h4>}
+              onClick={this.easterEgg}>
+          {
+            this.state.isMoonHover && <h4 className={styles.hidden}>
+              {this.state.moonText}
+            </h4>
+          }
         </span>
         <div className={styles.canvasBackground} ref={this.myRef}/>
       </>
