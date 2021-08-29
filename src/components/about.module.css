@@ -1,59 +1,47 @@
 .heading {
   color: #081b26;
   font-size: 50px;
+  padding-top: 100px;
 }
 
 .text {
-  color: black;
+  color: #081b26;
   font-size: 20px;
   opacity: 0.9;
 }
 
 .section {
-  background-color: #8c8483;
-  height: 80vh;
+  margin-top: 0;
+  background-color: whitesmoke;
 }
 
 .contentArea {
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  display: flex;
-}
-
-.textArea {
-  width: 50%;
-  margin-right: 25px;
+  padding: 1% 10% 5%;
+  text-align: center;
+  justify-content: center;
 }
 
 .iconHolder {
-  margin-top: 10%;
-  margin-left: 25px;
-  border-radius: 25px;
-  height: 50vh;
-  width: 45%;
-  background: #1a6665;
-}
-
-.grid {
-  margin: 10px;
   display: flex;
-  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .icon {
   margin: 0.5vw;
-  /*background: black;*/
-  width: 6vw;
-  aspect-ratio: 1/1;
-
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 }
 
 .icon > img {
-  width: 100%;
   margin: auto;
+  width: 100px;
+  vertical-align: middle;
+  aspect-ratio: 1/1;
+}
+
+.iconName {
+  color: #081b26;
 }
