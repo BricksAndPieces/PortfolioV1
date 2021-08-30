@@ -1,0 +1,67 @@
+.button {
+  width: 60px;
+  aspect-ratio: 1/1;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background-color: #081b26;
+  border-radius: 100%;
+  border: 2px solid whitesmoke;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: width 0.1s, bottom 0.1s, right 0.1s;
+}
+
+.button:hover {
+  width: 70px;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  border-color: #FFFFAAFF;
+}
+
+.button:hover > .text {
+  color: #FFFFAAFF;
+}
+
+.text {
+  margin: 0;
+  color: whitesmoke;
+  font-size: 40px;
+}
+
+.show {
+  animation: fadeIn 250ms;
+}
+
+.hide {
+  animation: fadeOut 250ms;
+  opacity: 0;
+}
+
+.hide:hover {
+  cursor: default;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}

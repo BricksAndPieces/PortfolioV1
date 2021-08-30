@@ -48,12 +48,12 @@ class Intro extends Component<{}, {
 						<div style={{marginTop: "5px"}}>
 
 							<a href={'https://www.linkedin.com/in/ishan-shetty/'} target={'_blank'}>
-								<button>
+								<button className={styles.button}>
 									<b>Connect on Linkedin</b>
 								</button>
 							</a>
 
-							<button onClick={() => alert('resume moment')}>
+							<button className={styles.button} onClick={() => alert('resume moment')}>
 								<b>View my Resume</b>
 							</button>
 
@@ -64,7 +64,7 @@ class Intro extends Component<{}, {
 						</div>
 
 						<a href={'#about'}>
-							<button className={styles.downButton}>v</button>
+							<button className={`${styles.downButton} ${styles.button}`}>v</button>
 						</a>
 
 					</div>
