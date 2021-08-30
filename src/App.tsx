@@ -8,6 +8,7 @@ import styles from './App.module.css';
 import Skills from "./components/skills";
 import React from "react";
 import AnimatedBackground from "./components/background/animated-background";
+import TopButton from "./components/top-button/top-button";
 
 class App extends Component {
   render() {
@@ -34,6 +35,7 @@ class App extends Component {
         {/*  Resume*/}
         {/*</section>*/}
         <Footer/>
+        <TopButton/>
       </>
     );
   }

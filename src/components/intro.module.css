@@ -1,8 +1,4 @@
-img {
-  margin-right: 10px;
-}
-
-button {
+.button {
   min-width: 220px;
   min-height: 50px;
   margin-left: 10px;
@@ -19,7 +15,7 @@ button {
   font-size: 15px;
 }
 
-button:hover {
+.button:hover {
   /*box-shadow: 0 0 5px 0 #FFFFAAFF inset, 0 0 16px 2px #FFFFAAFF;*/
   border: 2px solid #FFFFAAFF;
   background: #081b26;

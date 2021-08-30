@@ -74,7 +74,8 @@ class AnimatedBackground extends Component<{}, { isMoonHover: boolean, moonText:
         <span className={styles.moon}
               onMouseEnter={this.enterHover}
               onMouseLeave={this.exitHover}
-              onClick={this.easterEgg}>
+              onClick={this.easterEgg}
+              id={"moon"}>
           {
             this.state.isMoonHover && <h4 className={styles.hidden}>
               {this.state.moonText}

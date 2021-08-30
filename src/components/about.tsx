@@ -1,6 +1,7 @@
 import { Component } from "react";
 import styles from "./about.module.css"
 
+// https://devicon.dev/
 import java_svg from "../assets/images/skills/java.svg"
 import python_svg from "../assets/images/skills/python.svg"
 import csharp_svg from "../assets/images/skills/csharp.svg"
@@ -11,8 +12,9 @@ import react_svg from "../assets/images/skills/react.svg"
 import javascript_svg from "../assets/images/skills/javascript.svg"
 import html_svg from "../assets/images/skills/html.svg"
 import css_svg from "../assets/images/skills/css.svg"
+import Timeline from "./timeline/timeline";
 
-class About extends Component {
+class About extends Component<{id: string}, {}> {
 	render() {
 		return (
 			<section id={this.props.id} className={styles.section}>
@@ -71,7 +73,40 @@ class About extends Component {
 					</div>
 
 					<h2 className={styles.heading}>Experience</h2>
-					<p className={styles.text}>TODO</p>
+					<Timeline
+						year={"2021"}
+						title={"Example Title"}
+						subTitle={"Jun 2020 - Jul 2021 | Example position"}
+						description={
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text "
+						}
+					/>
+					<Timeline
+						year={"2020"}
+						title={"Example Title"}
+						subTitle={"Jun 2020 - Jul 2021 | Example position"}
+						description={
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text "
+						}
+					/>
+					<Timeline
+						year={"2019"}
+						title={"Example Title"}
+						subTitle={"Jun 2020 - Jul 2021 | Example position"}
+						description={
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text " +
+							"Example text example text example text example text example text example text example text "
+						}
+						isLast={true}
+					/>
 
 					<h2 className={styles.heading}>Projects</h2>
 					<p className={styles.text}>TODO</p>
