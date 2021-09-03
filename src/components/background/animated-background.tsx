@@ -5,9 +5,15 @@ import p5 from "p5";
 import { FireworkSystem } from "./elements/fireworks";
 import { Rocket } from "./elements/rocket";
 
-class AnimatedBackground extends Component<{}, { isMoonHover: boolean, moonText: string }> {
-  private readonly myRef: React.RefObject<any>;
+class AnimatedBackground extends Component<{
+  moonClicked: () => void
+}, {
+  isMoonHover: boolean,
+  moonText: string
+}> {
   private myP5?: p5;
+  private readonly myRef: React.RefObject<any>;
+  private readonly moonClicked: () => void;
 
   private rocket?: Rocket;
   private firework?: FireworkSystem;
@@ -20,6 +26,7 @@ class AnimatedBackground extends Component<{}, { isMoonHover: boolean, moonText:
   constructor(props: any) {
     super(props);
     this.myRef = React.createRef();
+    this.moonClicked = props.moonClicked;
 
     this.state = {
       isMoonHover: false,
@@ -62,6 +69,7 @@ class AnimatedBackground extends Component<{}, { isMoonHover: boolean, moonText:
         this.setState({moonText: 'Again?'})
         this.allowRocket = true;
       }, 5000);
+      this.moonClicked();
     }else if(this.allowRocket && !this.rocket?.active) {
       this.firework?.pause(300);
       this.rocket?.launch();

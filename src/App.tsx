@@ -11,11 +11,20 @@ import AnimatedBackground from "./components/background/animated-background";
 import TopButton from "./components/top-button/top-button";
 
 class App extends Component {
+  private readonly footerRef: React.RefObject<any>;
+
+  constructor(props: any) {
+    super(props);
+    this.footerRef = React.createRef();
+  }
+
   render() {
     return (
       <>
         {/*<Header/>*/}
-        <AnimatedBackground/>
+        <AnimatedBackground moonClicked={
+          () => this.footerRef.current.setState({moonClicked: true})
+        }/>
         <Intro/>
 
         {/*<div className={`${styles.spacer} ${styles.divider1}`} />*/}
@@ -34,7 +43,7 @@ class App extends Component {
         {/*<section id={"resume"}>*/}
         {/*  Resume*/}
         {/*</section>*/}
-        <Footer/>
+        <Footer ref={this.footerRef}/>
         <TopButton/>
       </>
     );
