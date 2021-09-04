@@ -40,6 +40,7 @@
   width: 80px;
   vertical-align: middle;
   aspect-ratio: 1/1;
+  pointer-events: none;
 }
 
 .iconName {
