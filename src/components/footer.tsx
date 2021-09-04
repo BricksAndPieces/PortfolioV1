@@ -18,7 +18,12 @@ class Footer extends Component<{}, {moonClicked: boolean}> {
 					this.state.moonClicked
 						? <p className={styles.footer}>Made with ❤️ by Ishan Shetty</p>
 						: <p className={styles.footer}>
-								Have you tried clicking on the <a className={styles.footerLink} href={"#moon"}><b>Moon</b></a>?
+								Have you tried clicking on the <a
+									className={styles.footerLink}
+									href={"#"}
+									onClick={() => window.scrollTo(0, 0)}>
+									<b>Moon</b>
+								</a>?
 							</p>
 				}
 			</>
