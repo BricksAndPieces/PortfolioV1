@@ -46,3 +46,9 @@
 .iconName {
   color: #081b26;
 }
+
+.contactFormParent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

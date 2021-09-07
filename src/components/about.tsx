@@ -13,6 +13,7 @@ import javascript_svg from "../assets/images/skills/javascript.svg"
 import html_svg from "../assets/images/skills/html.svg"
 import css_svg from "../assets/images/skills/css.svg"
 import Timeline from "./timeline/timeline";
+import ContactForm from "./contact-form/contact-form";
 
 class About extends Component<{id: string}, {}> {
 	render() {
@@ -112,7 +113,9 @@ class About extends Component<{id: string}, {}> {
 					<p className={styles.text}>TODO</p>
 
 					<h2 className={styles.heading}>Contact Me</h2>
-					<p className={styles.text}>TODO</p>
+					<div className={styles.contactFormParent}>
+						<ContactForm/>
+					</div>
 				</div>
 			</section>
 		);
