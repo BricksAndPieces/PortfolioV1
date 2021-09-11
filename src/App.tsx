@@ -22,9 +22,7 @@ class App extends Component {
     return (
       <>
         {/*<Header/>*/}
-        <AnimatedBackground moonClicked={
-          () => this.footerRef.current.setState({moonClicked: true})
-        }/>
+        <AnimatedBackground moonClicked={ () => this.footerRef.current.setState({moonClicked: true}) }/>
         <Intro/>
 
         {/*<div className={`${styles.spacer} ${styles.divider1}`} />*/}
