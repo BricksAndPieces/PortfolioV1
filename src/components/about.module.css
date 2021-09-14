@@ -47,6 +47,17 @@
   color: #081b26;
 }
 
+.projectContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project {
+  padding: 5px
+}
+
 .contactFormParent {
   width: 100%;
   display: flex;
