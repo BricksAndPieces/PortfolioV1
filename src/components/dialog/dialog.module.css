@@ -1,0 +1,23 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  max-width: 500px;
+  background-color: red;
+  border-radius: 10px;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

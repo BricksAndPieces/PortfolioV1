@@ -1,8 +1,7 @@
 import { Component } from "react";
 import styles from "./intro.module.css"
-import Boids from "./boids/boids";
 import React from "react";
-import AnimatedBackground from "./background/animated-background";
+import Dialog from "./dialog/dialog";
 
 const taglines = [
 	"Full-Stack Developer",
@@ -10,9 +9,7 @@ const taglines = [
 	"Honors Undergraduate Student"
 ];
 
-class Intro extends Component<{}, {
-	taglineIndex: number;
-}> {
+class Intro extends Component<{}, { taglineIndex: number; }> {
 	private timeout?: NodeJS.Timer;
 
 	constructor(props: any) {

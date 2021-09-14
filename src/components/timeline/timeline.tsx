@@ -19,7 +19,7 @@ class Timeline extends Component<{
           <div className={styles.circle}>
             <h4 className={styles.circleText}>{this.props.year}</h4>
           </div>
-          <div className={styles.contentArea}>
+          <div className={`${styles.contentArea} ${!this.props.isLast && styles.bottomMargin}`}>
             <h3 className={styles.mainHeading}>{this.props.title}</h3>
             <h4 className={styles.subHeading}>{this.props.subTitle}</h4>
             <p className={styles.contentDescription}>

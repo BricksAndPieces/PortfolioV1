@@ -40,8 +40,26 @@
   width: 80px;
   vertical-align: middle;
   aspect-ratio: 1/1;
+  pointer-events: none;
 }
 
 .iconName {
   color: #081b26;
+}
+
+.projectContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project {
+  padding: 5px
+}
+
+.contactFormParent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
