@@ -1,7 +1,7 @@
 import { Component } from "react";
-import styles from "./intro.module.css"
+import styles from "./home.module.css"
 import React from "react";
-import Dialog from "./dialog/dialog";
+import Dialog from "../dialog/dialog";
 
 const taglines = [
 	"Full-Stack Developer",
@@ -9,7 +9,7 @@ const taglines = [
 	"Honors Undergraduate Student"
 ];
 
-class Intro extends Component<{}, { taglineIndex: number; }> {
+class Home extends Component<{}, { taglineIndex: number; }> {
 	private timeout?: NodeJS.Timer;
 
 	constructor(props: any) {
@@ -71,4 +71,4 @@ class Intro extends Component<{}, { taglineIndex: number; }> {
 	}
 }
 
-export default Intro;
+export default Home;
