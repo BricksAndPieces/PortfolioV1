@@ -1,74 +1,87 @@
-import { Component } from "react";
+import {Component} from "react";
 import styles from "./home.module.css"
 import React from "react";
 import Dialog from "../dialog/dialog";
+import RESUME_PDF from "../../assets/resume.pdf"
 
-const taglines = [
-	"Full-Stack Developer",
-	"AI enthusiast",
-	"Honors Undergraduate Student"
+const TAGLINES = [
+  "Full-Stack Developer",
+  "AI enthusiast",
+  "Honors Undergraduate Student"
 ];
 
-class Home extends Component<{}, { taglineIndex: number; }> {
-	private timeout?: NodeJS.Timer;
+class Home extends Component<{}, {
+  taglineIndex: number;
+}> {
+  private timeout?: NodeJS.Timer;
 
-	constructor(props: any) {
-		super(props);
-		this.state = {
-			taglineIndex: 0
-		}
-	}
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      taglineIndex: 0
+    }
+  }
 
-	componentDidMount() {
-		this.timeout = setInterval(() => {
-			let currentIdx = this.state.taglineIndex
-			this.setState({ taglineIndex: currentIdx + 1 });
-		}, 5000);
-	}
+  componentDidMount() {
+    this.timeout = setInterval(() => {
+      let currentIdx = this.state.taglineIndex
+      this.setState({taglineIndex: currentIdx + 1});
+    }, 5000);
+  }
 
-	componentWillUnmount() {
-		clearInterval(this.timeout!);
-	}
+  componentWillUnmount() {
+    clearInterval(this.timeout!);
+  }
 
-	render() {
-		let tagline = taglines[this.state.taglineIndex % taglines.length];
+  render() {
+    let tagline = TAGLINES[this.state.taglineIndex % TAGLINES.length];
 
-		return (
-			<>
-				{/*<Boids/>*/}
-				{/*<AnimatedBackground/>*/}
-				<section className={styles.section}>
-					<div className={styles.contentArea}>
-						{/*<h4 className={styles.intro}>👋 Hi there, my name is</h4>*/}
-						<h1 className={styles.name}>Ishan Shetty</h1>
-						<h3 className={styles.tagline}>{ tagline }</h3>
-						<div style={{marginTop: "5px"}}>
+    return (
+      <>
+        <section className={styles.section}>
+          <div className={styles.contentArea}>
+            <h1 className={styles.name}>Ishan Shetty</h1>
+            <h3 className={styles.tagline}>{tagline}</h3>
+            <div style={{marginTop: "5px"}}>
 
-							<a href={'https://www.linkedin.com/in/ishan-shetty/'} target={'_blank'}>
+              <a href={'https://www.linkedin.com/in/ishan-shetty/'} target={'_blank'} rel="noreferrer">
+                <button className={styles.button}>
+                  <b>Linkedin</b>
+                  &nbsp;
+                  <i className="fa fa-linkedin-square"/>
+                </button>
+              </a>
+
+							<a href={'https://github.com/bricksandpieces'} target={'_blank'} rel="noreferrer">
 								<button className={styles.button}>
-									<b>Connect on Linkedin</b>
+									<b>Github</b>
+									&nbsp;
+									<i className="fa fa-github-square"/>
 								</button>
 							</a>
 
-							<button className={styles.button} onClick={() => alert('resume moment')}>
-								<b>View my Resume</b>
-							</button>
+              <a href={RESUME_PDF} target={'_blank'} rel="noreferrer">
+                <button className={styles.button}>
+                  <b>Resume</b>
+                  &nbsp;
+                  <i className="fa fa-file-text-o"/>
+                </button>
+              </a>
+            </div>
 
+            <div className={styles.scroll}>
+              <a href={"#about"}>
+                <div className={styles.mouse}>
+                  <div className={styles.mouseWheel}/>
+                </div>
+              </a>
+            </div>
 
-							{/*<img width={"40px"} height={"40px"} src={"https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"}/>*/}
-							{/*<img width={"40px"} height={"40px"} src={"https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png"}/>*/}
-							{/*<img width={"40px"} height={"40px"} src={"https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png"}/>*/}
-						</div>
-
-						<a href={'#about'}>
-							<button className={`${styles.downButton} ${styles.button}`}>v</button>
-						</a>
-
-					</div>
-				</section>
-			</>
-		);
-	}
+          </div>
+        </section>
+      </>
+    );
+  }
 }
 
 export default Home;

@@ -30,7 +30,7 @@ class PageContent extends Component<{id: string}, {}> {
 					<SkillsSection/>
 					<ExperienceSection/>
 					<ProjectSection/>
-					<ContactSection/>
+					{/*<ContactSection/>*/}
 				</div>
 			</section>
 		);

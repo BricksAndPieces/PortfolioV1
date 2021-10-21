@@ -20,7 +20,7 @@ class ProjectCard extends Component<{
     return (
       <>
         <div className={styles.card}>
-          <img src={this.props.thumbnail} className={styles.thumbnail}/>
+          <img src={this.props.thumbnail} className={styles.thumbnail} alt={"project thumbnail"}/>
           <div className={styles.contentArea}>
             <h4 className={styles.title}>{this.props.title}</h4>
             <p className={styles.text}>

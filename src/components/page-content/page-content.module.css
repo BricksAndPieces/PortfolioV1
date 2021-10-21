@@ -13,10 +13,13 @@ p {
 .section {
   margin-top: 0;
   background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
 }
 
 .contentArea {
   padding: 1% 10% 5%;
   text-align: center;
   justify-content: center;
+  max-width: 1200px;
 }
