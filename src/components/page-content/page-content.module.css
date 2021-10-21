@@ -1,0 +1,25 @@
+h2 {
+  color: #081b26;
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+p {
+  color: #081b26;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.section {
+  margin-top: 0;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+
+.contentArea {
+  padding: 1% 10% 5%;
+  text-align: center;
+  justify-content: center;
+  max-width: 1200px;
+}

@@ -23,7 +23,16 @@ class Timeline extends Component<{
             <h3 className={styles.mainHeading}>{this.props.title}</h3>
             <h4 className={styles.subHeading}>{this.props.subTitle}</h4>
             <p className={styles.contentDescription}>
-              {this.props.description}
+              {
+                this.props.description.split("\n").map((value, index) => {
+                  return (
+                    <span key={index}>
+                      {value}
+                      <br/>
+                    </span>
+                  )
+                })
+              }
             </p>
           </div>
         </div>

@@ -19,6 +19,10 @@ class Dialog extends Component<{
     }
   }
 
+  // show() {
+  //   this.setState({display: true});
+  // }
+
   componentDidUpdate() {
     if(this.state.display && document.body && !this.state.showing) {
       let scrollY = window.scrollY;
