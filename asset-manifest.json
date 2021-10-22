@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "https://bricksandpieces.github.io/PortfolioV1/static/css/main.7cdfde85.chunk.css",
+    "main.js": "https://bricksandpieces.github.io/PortfolioV1/static/js/main.1e0474a8.chunk.js",
+    "main.js.map": "https://bricksandpieces.github.io/PortfolioV1/static/js/main.1e0474a8.chunk.js.map",
+    "runtime-main.js": "https://bricksandpieces.github.io/PortfolioV1/static/js/runtime-main.e3faf639.js",
+    "runtime-main.js.map": "https://bricksandpieces.github.io/PortfolioV1/static/js/runtime-main.e3faf639.js.map",
+    "static/js/2.b8a53862.chunk.js": "https://bricksandpieces.github.io/PortfolioV1/static/js/2.b8a53862.chunk.js",
+    "static/js/2.b8a53862.chunk.js.map": "https://bricksandpieces.github.io/PortfolioV1/static/js/2.b8a53862.chunk.js.map",
+    "static/js/3.46a4db09.chunk.js": "https://bricksandpieces.github.io/PortfolioV1/static/js/3.46a4db09.chunk.js",
+    "static/js/3.46a4db09.chunk.js.map": "https://bricksandpieces.github.io/PortfolioV1/static/js/3.46a4db09.chunk.js.map",
+    "index.html": "https://bricksandpieces.github.io/PortfolioV1/index.html",
+    "static/css/main.7cdfde85.chunk.css.map": "https://bricksandpieces.github.io/PortfolioV1/static/css/main.7cdfde85.chunk.css.map",
+    "static/js/2.b8a53862.chunk.js.LICENSE.txt": "https://bricksandpieces.github.io/PortfolioV1/static/js/2.b8a53862.chunk.js.LICENSE.txt",
+    "static/media/android.110a3ba4.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/android.110a3ba4.svg",
+    "static/media/angular.63e7b1c3.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/angular.63e7b1c3.svg",
+    "static/media/App.module.css": "https://bricksandpieces.github.io/PortfolioV1/static/media/layered-waves-haikei.853b277c.svg",
+    "static/media/csharp.a2fd865c.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/csharp.a2fd865c.svg",
+    "static/media/css.234b983a.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/css.234b983a.svg",
+    "static/media/github.32a3be40.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/github.32a3be40.svg",
+    "static/media/html.5cb8eb83.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/html.5cb8eb83.svg",
+    "static/media/java.52755924.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/java.52755924.svg",
+    "static/media/javascript.0b290a3c.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/javascript.0b290a3c.svg",
+    "static/media/python.ea6aac0f.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/python.ea6aac0f.svg",
+    "static/media/react.521acdf0.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/react.521acdf0.svg",
+    "static/media/resume.8576f298.pdf": "https://bricksandpieces.github.io/PortfolioV1/static/media/resume.8576f298.pdf",
+    "static/media/swift.34e120be.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/swift.34e120be.svg",
+    "static/media/website.9e3c97ae.svg": "https://bricksandpieces.github.io/PortfolioV1/static/media/website.9e3c97ae.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3faf639.js",
+    "static/js/2.b8a53862.chunk.js",
+    "static/css/main.7cdfde85.chunk.css",
+    "static/js/main.1e0474a8.chunk.js"
+  ]
+}
